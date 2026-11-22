@@ -34,7 +34,8 @@ async def help_handler(message: Message):
         "Yordam bo'limi:\n"
         "/start - Botni boshlash\n"
         "/help - Yordam\n"
-        "/about - Bot haqida"
+        "/about - Bot haqida\n"
+        "/info - Info haqida"
     )
 
 
@@ -45,6 +46,17 @@ async def about_handler(message: Message):
         "Bu mening Python va aiogram yordamida "
         "yaratgan birinchi Telegram botim!"
     )
+
+
+# INFO COMMAND
+@dp.message(Command("info"))
+async def info_handler(message: Message):
+    await message.answer(
+    "Bot nomi: My Python Bot\n"
+    "Dasturlash tili: Python\n"
+    "Framework: Aiogram\n"
+    "Versiya: 1.0"
+)
 
 
 # TEXT MESSAGE HANDLER
